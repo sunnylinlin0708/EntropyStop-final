@@ -1,22 +1,3 @@
-"""
-run_baseline.py  —  第一棒（A）：跑 VanillaAE 與 EntropyAE 的基準結果
-
-放在作者 repo 的根目錄（和 data/、Exp1/ 同一層），在根目錄執行：
-
-    python run_baseline.py                       # 跑 configs/datasets.txt 中所有資料集、種子 0~4、兩種方法
-    python run_baseline.py --datasets 18_Ionosphere.npz --seeds 0      # 只跑一個資料集、一個種子（測試用）
-
-輸出：results/baseline/baseline_results.csv，欄位為全組統一格式：
-    dataset, method, seed, lr, k, R_down, extra_param, stop_iter, total_iter, AUC, AP, train_time_sec
-
-說明：
-- 直接呼叫作者的 run_AE()（DeepODModel/AE/run_ae.py），模型與超參數預設值和作者的 Exp1/run_AE_batch.py 相同
-  （epoch=250, batch_size=1024, lr=0.001, k=100, R_down=0.01, n_eval=1024）。
-- 與作者腳本的差異：只跑指定的資料集；每個 (資料集, 種子) 都重新設定隨機種子，方便重現；
-  每跑完一筆就寫入 csv，中斷後重新執行會自動跳過已完成的部分；不覆蓋作者附的 Exp1/results/。
-- stop_iter：EntropyAE 選中的最佳參數所在的訓練步數（從 0 起算）；total_iter：實際訓練的總步數。
-  VanillaAE 不提早停止，stop_iter 留空。
-"""
 import argparse
 import csv
 import os

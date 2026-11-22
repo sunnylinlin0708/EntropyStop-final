@@ -1,18 +1,3 @@
-"""
-compare_with_paper.py  —  第一棒（A）：把我們的基準結果和論文、作者附的結果對照
-
-在作者 repo 根目錄執行（先跑完 run_baseline.py）：
-
-    python compare_with_paper.py
-
-讀取：
-  results/baseline/baseline_results.csv        我們跑的結果（5 個種子）
-  configs/paper_table9_10.csv                  論文 Table 9（AUC）與 Table 10（AP）的數字
-  Exp1/results/EntropyAE-*.csv                 作者 repo 附的 EntropyAE 結果（3 次）
-輸出：
-  results/baseline/compare_with_paper.csv      每個資料集 × 方法一列
-  畫面上列出差距超過 0.03 的項目，需要在對照表中寫下可能原因
-"""
 import glob
 import os
 
