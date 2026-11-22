@@ -1,0 +1,2 @@
+dataset,method,seed,lr,k,R_down,extra_param,stop_iter,total_iter,AUC,AP,train_time_sec
+18_Ionosphere.npz,Fixed50AE,0,0.001,100,0.01,batch_size=1024;epoch=250,49,50,0.925926,0.919749,0.2293
