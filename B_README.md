@@ -106,6 +106,5 @@ python scripts/b_curves.py --seeds 0 1 2 3 4 --epochs 500
 
 逐步紀錄在 `results/analysis/curves/`；彙整表在
 `results/analysis/correlation_summary.csv`；曲線與 loss 分布在
-`figures/analysis/`。分析結論見 `docs/EntropyStop_B_Analysis_zhTW.docx`，
-完整方法與限制見 `B_README.md`。
+`figures/analysis/`。分析結論見 `docs/EntropyStop_B_Analysis.docx`。
 
