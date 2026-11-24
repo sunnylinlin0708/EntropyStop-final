@@ -13,12 +13,10 @@ from DeepODModel.AE.run_ae import run_AE
 from EntropyEarlyStop import ModelEntropyEarlyStop
 from exp_utils import dataLoading, set_seed
 
-# 作者程式最後會呼叫 torch.cuda.max_memory_allocated('cuda')，沒有 NVIDIA GPU 時會出錯，這裡讓它回傳 0。
 if not torch.cuda.is_available():
     torch.cuda.max_memory_allocated = lambda *args, **kwargs: 0
 
 
-# 記錄 EntropyStop 停在哪一步：包一層作者的停止類別，把最後建立的物件存起來（不改變任何行為）。
 class _RecordingEntropyStop(ModelEntropyEarlyStop):
     last = None
 
